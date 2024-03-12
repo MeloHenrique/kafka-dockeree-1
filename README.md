@@ -1,7 +1,7 @@
 # Introduction 
 This is a development-only container of kafka based on instructions here: https://dzone.com/articles/running-apache-kafka-on-windows-os.
 
-It includes zookeeper, a single kafka instance plus kafka manager web interface. All storage is ephemeral (but you could change that if needed).
+It includes zookeeper and a single kafka instance. All storage is ephemeral (but you could change that if needed).
 
 Its mainly tested on Windows Docker EE but works on CE too.
 
@@ -17,7 +17,7 @@ On CE I've previously had error "The operation timed out because a response was 
 
 # Build and Test
 
-Build and run the container via `build.ps1`. It takes a *very* long time on first run, mainly due to pulling and building scala for the kafka manager webUI.
+Build and run the container via `build.ps1`. It takes a *very* long time on first run.
 
 Once running, run with `run.ps1`.
 Note the first 3 digits of the container id and plug into the following powershell commands to test the container is working internally:
@@ -33,7 +33,7 @@ Note the first 3 digits of the container id and plug into the following powershe
   # messages typed in the producer shell get echoed to the consumer
 </pre>
 
-You should be then able to connect to the cluster on kafka_dockeree_server:9092 and to the web management (kafka-manager) on http://kafka_dockeree_server:9000.
+You should be then able to connect to the cluster on kafka_dockeree_server:9092.
 
 # Contribute
 If you want to, feel free!
